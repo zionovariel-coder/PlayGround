@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#101a27">
+<title>JIMJACK — The Unwritten Realm</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="game">
+  <canvas id="world" aria-label="JIMJACK open-world adventure"></canvas>
+  <div class="vignette"></div>
+  <header class="topbar">
+    <div class="brand"><div class="sigil">✦</div><div><b>JIMJACK</b><small>THE UNWRITTEN REALM</small></div></div>
+    <div class="region"><span class="region-dot"></span><span id="regionName">Mosslight Wilds</span><small id="clock">DAY 1 · 08:24</small></div>
+    <div class="top-actions"><button data-panel="map">⌖ <span>Map</span></button><button data-panel="quests">☷ <span>Quests</span></button><button data-panel="inventory">▤ <span>Satchel</span></button><button id="settingsBtn">⚙</button></div>
+  </header>
+  <section class="left-hud">
+    <div class="player-card"><div class="portrait">✧</div><div class="player-info"><div class="player-line"><b>Wanderer</b><span id="level">LV 1</span></div><div class="bar hp"><i id="healthBar"></i></div><small id="healthText">100 / 100</small><div class="bar xp"><i id="xpBar"></i></div></div></div>
+    <div class="companion"><span class="pet-icon" id="petIcon">◈</span><div><b id="petName">Pip</b><small id="petState">Curious companion</small></div><span class="pet-bond">♡ <i id="bond">0</i></span></div>
+    <div class="quest-pin" id="questPin"><small>✦ ACTIVE TALE</small><b id="questTitle">A Signal in the Static</b><span id="questObjective">Find the source of the blue light</span></div>
+  </section>
+  <div class="right-hud"><div class="currency"><span class="coin">✧</span><b id="jambas">120</b><small>JAMBAS</small></div><div class="currency rare"><span class="coin">❖</span><b id="jimbies">2</b><small>JIMBIES</small></div><button class="minimap" id="miniMap" aria-label="Open map"><canvas id="mapCanvas" width="150" height="150"></canvas><span class="map-label">WORLD MAP <b>↗</b></span></button></div>
+  <div class="bottom-hud"><div class="controls-hint"><kbd>WASD</kbd> Move <kbd>SHIFT</kbd> Dash <kbd>F</kbd> Interact</div><div class="combat-controls"><button id="attackBtn" class="action attack"><span>⚔</span><small>STRIKE</small><kbd>SPACE</kbd></button><button id="skillBtn" class="action skill"><span>✦</span><small>ARC PULSE</small><kbd>E</kbd><i class="cooldown" id="skillCd"></i></button><button id="ultBtn" class="action ultimate"><span>◉</span><small>STARFALL</small><kbd>Q</kbd><i class="cooldown" id="ultCd"></i></button></div><div class="interact-hint" id="interactHint"></div></div>
+  <div class="mobile-controls"><div class="stick" id="stick"><div class="stick-knob"></div></div><div class="mobile-actions"><button id="mInteract">F</button><button id="mAttack" class="attack">⚔</button><button id="mSkill" class="skill">✦</button><button id="mDash">➤</button></div></div>
+  <div id="toast" class="toast"></div>
+  <div id="overlay" class="overlay hidden"><div class="panel"><button class="close" id="closePanel">×</button><div id="panelBody"></div></div></div>
+  <div id="dialogue" class="dialogue hidden"><div class="speaker"><span class="speaker-mark">✦</span><div><b id="speakerName">A voice</b><small id="speakerRole">Unknown</small></div></div><p id="dialogueText"></p><button id="shopFromDialogue" class="dialogue-shop hidden">Browse Seli’s wares <span>✦</span></button><button id="dialogueNext">Continue <span>↗</span></button></div>
+  <div id="titleScreen" class="title-screen"><div class="title-stars"></div><div class="title-content"><div class="title-mark">✧</div><p class="eyebrow">A STORY THAT WASN'T MEANT TO BE PLAYED</p><h1>JIM<span>JACK</span></h1><p class="subtitle">THE UNWRITTEN REALM</p><div class="title-rule"></div><p class="title-copy">One late-night game. One world that remembers you.<br>Find the way home—or discover why it called.</p><button id="playBtn" class="primary-btn">ENTER THE REALM <span>→</span></button><small class="save-note">A quiet world awaits. Progress saves automatically.</small></div><div class="title-footer">WASD to wander · Space to strike · E to weave magic</div></div>
+  <div id="levelFlash" class="level-flash hidden"></div>
+</main>
+<script src="game.js"></script>
+</body></html>
